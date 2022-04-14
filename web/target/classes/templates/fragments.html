@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:fragment="headerfiles">
+<meta charset="ISO-8859-1">
+<title>Online-Shop</title>
+<link th:href="@{~/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{~/fontawesome/css/all.css}" rel="stylesheet">
+</head>
+<body>
+
+	<div th:fragment="nav">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<div class="container">
+				<li class="nav-item">
+					<a class="navbar-brand" href="#" th:href="@{/index}"><i class="fab fa-apple"></i> iPoint</a>
+				</li>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item"><a
+						class="nav-link" href="#" th:href="@{/admin/index}">Admin</a></li>
+				</ul>
+				<ul class="nav my-auto mr-4">
+					<li class="nav-item"><a href="#" class="navbar-brand" th:href="@{/profile/cart-product}"><i class="fab fa-opencart"></i></a></li>
+				</ul>
+					<a sec:authorize="isAuthenticated()" class="navbar-brand" href="#" th:href="@{/logout}"><i class="bi bi-person-circle"></i> Log out</a>
+					<a sec:authorize="isAnonymous()" class="navbar-brand" href="#" th:href="@{~/login}"><i class="bi bi-person-circle"></i> Sign in</a>
+					&nbsp&nbsp&nbsp
+			</div>
+			</div>
+		</nav>
+	</div>
+
+</body>
+</html>
