@@ -1,9 +1,9 @@
-package com.shop.onlineshop.service.api;
+package com.shop.onlineshop.service;
 
 
-import com.shop.onlineshop.dao.UserRepository;
+import com.shop.onlineshop.repositories.UserRepository;
 import com.shop.onlineshop.model.GoogleUserInfo;
-import com.shop.onlineshop.model.User;
+import com.shop.onlineshop.model.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.crypto.password.PasswordEncoder;

@@ -1,7 +1,6 @@
 package com.shop.onlineshop.config;
 
-import com.shop.onlineshop.service.api.CustomOidcUserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.shop.onlineshop.service.CustomOidcUserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;

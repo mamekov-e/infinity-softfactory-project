@@ -1,4 +1,4 @@
-package com.shop.onlineshop.model;
+package com.shop.onlineshop.model.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -41,15 +41,14 @@ public class User {
 	@Column
 	private String city;
 
+	@Column
+	private String address;
+
 	private int active;
 
-	public int getActive() {
-		return active;
-	}
-
-	public void setActive(int active) {
-		this.active = active;
-	}
+	@ManyToMany(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
+	@JoinTable(name = "userProductList", joinColumns = @JoinColumn(name = "userId"), inverseJoinColumns = @JoinColumn(name = "productId"))
+	private List<Product> productList;
 
 	public List<String> getRoleList() {
 		if (this.role.length() > 0) {

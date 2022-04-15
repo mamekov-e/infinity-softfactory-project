@@ -1,6 +1,6 @@
 package com.shop.onlineshop.service;
 
-import com.shop.onlineshop.model.User;
+import com.shop.onlineshop.model.entities.User;
 
 import java.util.List;
 

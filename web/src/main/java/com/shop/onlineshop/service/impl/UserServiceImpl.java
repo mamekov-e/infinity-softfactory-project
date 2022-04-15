@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import com.shop.onlineshop.dao.UserRepository;
-import com.shop.onlineshop.model.User;
+import com.shop.onlineshop.repositories.UserRepository;
+import com.shop.onlineshop.model.entities.User;
 import com.shop.onlineshop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -30,6 +30,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void save(User user) {
 		user.setActive(1);
+		user.setRole("USER");
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		userRepository.save(user);
 	}
