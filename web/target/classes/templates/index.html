@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:insert="fragments.html :: headerfiles">
+</head>
+<body>
+	<header th:insert="fragments.html :: nav"></header>
+	<br>
+
+	<div class="container">
+		<div class="container">
+			<nav class="navbar navbar-expand-lg navbar-light bg-white">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a class="nav-link active" href="#" th:href="@{/allProduct}">All products <span class="sr-only">(current)</span></a>
+						<a class="nav-link" th:each="category : ${categoryList}"
+						   th:text="${category.categoryName}" href="#" th:href="@{'/getProducts/' + ${category.categoryId}}"></a>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4" th:each="product : ${productList}">
+				<div class="card mt-4">
+					<span class="discount">SALES</span>
+					<img th:src="${product.image}" class="card-img-top" alt="Product Image">
+					<div class="card-body">
+						<h5 th:text="${product.productName}" class="card-title"></h5>
+						<p th:text="${product.productPrice} + ' ₸'" class="card-text"></p>
+						<div class="btn" >
+							<a class="link_cart" href="#" th:href="@{'~/profile/addToCart/' + ${product.productId}}">
+								<i class="fa fa-shopping-cart"></i>
+								<span>Add to cart</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br><br><br><br><br>
+	<div class="footer-dark">
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6 col-md-3 item">
+							<h3>Services</h3>
+							<ul>
+								<li><a href="#">Web design</a></li>
+								<li><a href="#">Development</a></li>
+								<li><a href="#">Hosting</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-6 col-md-3 item">
+							<h3>About</h3>
+							<ul>
+								<li><a href="#">Company</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Careers</a></li>
+							</ul>
+						</div>
+						<div class="col-md-6 item text">
+							<h3>Company Name</h3>
+							<p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+						</div>
+					</div>
+					<p class="copyright">Company Name © 2018</p>
+				</div>
+			</footer>
+		</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
