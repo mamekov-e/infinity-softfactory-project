@@ -1,0 +1,1 @@
+There are admin templates and footer should now be at the bottom of the page.
