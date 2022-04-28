@@ -16,8 +16,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter{
 
-	//test
-
 	private final CustomOidcUserService customOidcUserService;
 	
 	private UserPrincipalDetailService userPrincipalDetailService;
@@ -38,7 +36,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter{
 			.authorizeRequests()
 				.antMatchers("/index","/signup","/login","/resources/**").permitAll()
 				.antMatchers("/profile/**").authenticated()
-				.antMatchers("/admin/**").hasRole("ADMIN")
+//				.antMatchers("/admin/**").hasRole("ADMIN")
 				.antMatchers("/oauth/**").permitAll()
 			.and()
 				.logout()

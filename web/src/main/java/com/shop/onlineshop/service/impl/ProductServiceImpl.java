@@ -38,6 +38,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<Product> findByName(String keyword) {
+        return productRepository.findProductByProductNameStartingWith(keyword);
+    }
+
+    @Override
     public void deleteProduct(Long productId) {
         productRepository.deleteById(productId);
     }

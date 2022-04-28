@@ -50,6 +50,14 @@ public class User {
 	@JoinTable(name = "userProductList", joinColumns = @JoinColumn(name = "userId"), inverseJoinColumns = @JoinColumn(name = "productId"))
 	private List<Product> productList;
 
+	public User(String firstName, String lastName, String email, String password, String role) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.role = role;
+	}
+
 	public List<String> getRoleList() {
 		if (this.role.length() > 0) {
 			return Arrays.asList(this.role.split(","));

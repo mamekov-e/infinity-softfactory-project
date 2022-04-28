@@ -35,6 +35,11 @@ public class UserServiceImpl implements UserService {
 		userRepository.save(user);
 	}
 
+	@Override
+	public User getById(Long id) {
+		return userRepository.getById(id);
+	}
+
 //	@Override
 //	public void update(User user) {
 //		List<Product> productlist1 = user.getProductList();

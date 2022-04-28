@@ -21,9 +21,24 @@
 					</div>
 				</div>
 			</nav>
+			<div>
+				<form th:action="@{/search}" method="get">
+					<tr>
+						<td>
+							<input type="text" class="form-control" name="keyword" th:value="${keyword}" placeholder="Search by name" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button style="width: 100px" type="submit" >Search</button>
+						</td>
+					</tr>
+				</form>
+			</div>
 		</div>
 
 		<div class="row">
+
 			<div class="col-sm-4" th:each="product : ${productList}">
 				<div class="card mt-4">
 					<span class="discount">SALES</span>
