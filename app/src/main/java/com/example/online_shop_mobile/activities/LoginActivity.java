@@ -1,5 +1,6 @@
 package com.example.online_shop_mobile.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -76,12 +77,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
         Call<LoginResponse> call = RetrofitClient
-                .getInstance().getApi().loginUser(email, password);
+                .getInstance()
+                .getApi()
+                .loginUser(email, password);
 
         call.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 LoginResponse loginResponse = response.body();
+                System.out.println("!!!!!!!!!!!LOGIN RESPONSE!!!!!!!" + loginResponse);
 
                 if (!loginResponse.isError()) {
 

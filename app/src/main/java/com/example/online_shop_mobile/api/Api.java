@@ -4,6 +4,7 @@ import com.example.online_shop_mobile.models.DefaultResponse;
 import com.example.online_shop_mobile.models.LoginResponse;
 import com.example.online_shop_mobile.models.UsersResponse;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
@@ -12,23 +13,22 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface Api {
 
-    @FormUrlEncoded
-    @POST("signup")
-    Call<DefaultResponse> createUser(
-            @Field("email") String email,
-            @Field("password") String password,
-            @Field("fName") String fName,
-            @Field("lName") String lName
+    @GET("signup")
+    Call<ResponseBody> createUser(
+            @Query("email") String email,
+            @Query("password") String password,
+            @Query("firstName") String fName,
+            @Query("lastName") String lName
     );
 
-    @FormUrlEncoded
-    @POST("login")
+    @GET("login")
     Call<LoginResponse> loginUser(
-            @Field("email") String email,
-            @Field("password") String password
+            @Query("email") String email,
+            @Query("password") String password
     );
 
     @GET("allusers")
@@ -38,9 +38,9 @@ public interface Api {
     @PUT("updateuser/{id}")
     Call<LoginResponse> updateUser(
             @Path("id") int id,
-            @Field("email") String email,
-            @Field("fName") String fName,
-            @Field("lName") String lName
+            @Query("email") String email,
+            @Query("fName") String fName,
+            @Query("lName") String lName
     );
 
     @FormUrlEncoded

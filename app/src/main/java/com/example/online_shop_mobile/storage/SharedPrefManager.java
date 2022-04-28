@@ -31,8 +31,8 @@ public class SharedPrefManager {
 
         editor.putInt("id", user.getId());
         editor.putString("email", user.getEmail());
-        editor.putString("name", user.getFName());
-        editor.putString("school", user.getLName());
+        editor.putString("firstName", user.getFName());
+        editor.putString("lastName", user.getLName());
 
         editor.apply();
 
@@ -48,8 +48,8 @@ public class SharedPrefManager {
         return new User(
                 sharedPreferences.getInt("id", -1),
                 sharedPreferences.getString("email", null),
-                sharedPreferences.getString("name", null),
-                sharedPreferences.getString("school", null)
+                sharedPreferences.getString("firstName", null),
+                sharedPreferences.getString("lastName", null)
         );
     }
 

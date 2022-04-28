@@ -4,16 +4,21 @@
     <item
         android:id="@+id/menu_home"
         android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:title="Products" />
 
-<!--    <item-->
-<!--        android:id="@+id/menu_users"-->
-<!--        android:icon="@drawable/ic_users"-->
-<!--        android:title="Users" />-->
+    <item
+        android:id="@+id/menu_cart"
+        android:icon="@drawable/ic_cart"
+        android:title="Cart" />
 
-<!--    <item-->
-<!--        android:id="@+id/menu_settings"-->
-<!--        android:icon="@drawable/ic_settings"-->
-<!--        android:title="Settings" />-->
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/menu_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings" />
 
 </menu>
