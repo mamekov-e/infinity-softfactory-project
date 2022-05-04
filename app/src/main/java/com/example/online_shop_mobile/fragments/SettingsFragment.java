@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +18,7 @@ import com.example.online_shop_mobile.R;
 import com.example.online_shop_mobile.activities.LoginActivity;
 import com.example.online_shop_mobile.activities.MainActivity;
 import com.example.online_shop_mobile.api.RetrofitClient;
-import com.example.online_shop_mobile.models.DefaultResponse;
-import com.example.online_shop_mobile.models.LoginResponse;
+import com.example.online_shop_mobile.models.response.DefaultResponse;
 import com.example.online_shop_mobile.models.User;
 import com.example.online_shop_mobile.storage.SharedPrefManager;
 
@@ -31,7 +29,7 @@ import retrofit2.Response;
 
 public class SettingsFragment extends Fragment implements View.OnClickListener {
 
-    private EditText editTextEmail, editTextFName, editTextLName;
+    private EditText editTextFName, editTextLName, editTextCity, editTextAddress;
     private EditText editTextCurrentPassword, editTextNewPassword;
 
 
@@ -45,9 +43,11 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        editTextEmail = view.findViewById(R.id.editTextEmail);
         editTextFName = view.findViewById(R.id.editTextFName);
         editTextLName = view.findViewById(R.id.editTextLName);
+        editTextCity = view.findViewById(R.id.editTextCity);
+        editTextAddress = view.findViewById(R.id.editTextAddress);
+
         editTextCurrentPassword = view.findViewById(R.id.editTextCurrentPassword);
         editTextNewPassword = view.findViewById(R.id.editTextNewPassword);
 
@@ -58,58 +58,40 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
     }
 
     private void updateProfile() {
-        String email = editTextEmail.getText().toString().trim();
-        String fName = editTextFName.getText().toString().trim();
-        String lName = editTextLName.getText().toString().trim();
-
-        if (email.isEmpty()) {
-            editTextEmail.setError("Email is required");
-            editTextEmail.requestFocus();
-            return;
-        }
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            editTextEmail.setError("Enter a valid email");
-            editTextEmail.requestFocus();
-            return;
-        }
-
-        if (fName.isEmpty()) {
-            editTextFName.setError("First name required");
-            editTextFName.requestFocus();
-            return;
-        }
-
-        if (lName.isEmpty()) {
-            editTextLName.setError("Last name required");
-            editTextLName.requestFocus();
-            return;
-        }
+        String firstName = editTextFName.getText().toString().trim();
+        String lastName = editTextLName.getText().toString().trim();
+        String city = editTextCity.getText().toString().trim();
+        String address = editTextAddress.getText().toString().trim();
 
         User user = SharedPrefManager.getInstance(getActivity()).getUser();
 
-        Call<LoginResponse> call = RetrofitClient.getInstance()
-                .getApi().updateUser(
-                        user.getId(),
-                        email,
-                        fName,
-                        lName
+        Call<User> call = RetrofitClient.getInstance()
+                .getApi()
+                .updateUser(
+                        user.getEmail(),
+                        firstName,
+                        lastName,
+                        city,
+                        address
                 );
 
-        call.enqueue(new Callback<LoginResponse>() {
+        call.enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+            public void onResponse(Call<User> call, Response<User> response) {
 
-                Toast.makeText(getActivity(), response.body().getMessage(), Toast.LENGTH_LONG).show();
-
-                if (!response.body().isError()) {
-                    SharedPrefManager.getInstance(getActivity()).saveUser(response.body().getUser());
-                }
+//                Toast.makeText(getActivity(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+                    User updatedUser = new User(response.body().getId(), response.body().getEmail(),
+                            response.body().getFName(),
+                            response.body().getLName(), response.body().getCity(),
+                            response.body().getAddress());
+//                if (!response.body().isError()) {
+                    SharedPrefManager.getInstance(getActivity()).saveUser(updatedUser);
+//                }
 
             }
 
             @Override
-            public void onFailure(Call<LoginResponse> call, Throwable t) {
+            public void onFailure(Call<User> call, Throwable t) {
 
             }
         });

@@ -17,15 +17,6 @@
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
         <EditText
-            android:id="@+id/editTextEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_email"
-            android:drawablePadding="5dp"
-            android:hint="email"
-            android:inputType="textEmailAddress" />
-
-        <EditText
             android:id="@+id/editTextFName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,6 +33,24 @@
             android:drawablePadding="5dp"
             android:hint="Last name"
             android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_city"
+            android:drawablePadding="5dp"
+            android:hint="City"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editTextAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_address"
+            android:drawablePadding="5dp"
+            android:hint="Address"
+            android:inputType="text" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonSave"

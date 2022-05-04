@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import com.example.online_shop_mobile.R;
 import com.example.online_shop_mobile.fragments.HomeFragment;
+import com.example.online_shop_mobile.fragments.ProductsFragment;
 import com.example.online_shop_mobile.fragments.ProfileFragment;
 import com.example.online_shop_mobile.fragments.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -41,7 +42,7 @@ public class ProfileActivity extends AppCompatActivity implements NavigationBarV
 
         switch(item.getItemId()){
             case R.id.menu_home:
-                fragment = new HomeFragment();
+                fragment = new ProductsFragment();
                 break;
             case R.id.menu_profile:
                 fragment = new ProfileFragment();

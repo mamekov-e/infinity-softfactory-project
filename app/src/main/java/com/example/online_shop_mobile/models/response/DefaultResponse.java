@@ -1,4 +1,4 @@
-package com.example.online_shop_mobile.models;
+package com.example.online_shop_mobile.models.response;
 
 import com.google.gson.annotations.SerializedName;
 

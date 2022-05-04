@@ -4,18 +4,23 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/77051/Downloads/Telegram Desktop/onlineshopmobile/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/77051/Downloads/onlineshopmobile/onlineshopmobile/app/src/main/res/layout/fragment_products.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/77051/Downloads/onlineshopmobile/onlineshopmobile/app/src/main/res/layout/recyclerview_products.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/drawable-v24/ic_home.xml" value="0.2203125" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/drawable-v24/ic_name.xml" value="0.2203125" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/drawable-v24/ic_password.xml" value="0.2203125" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/drawable-v24/ic_settings.xml" value="0.2203125" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/drawable-v24/ic_users.xml" value="0.2203125" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/drawable/ic_address.xml" value="0.2169230769230769" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/drawable/ic_cart.xml" value="0.2169230769230769" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/drawable/ic_city.xml" value="0.2169230769230769" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/layout/activity_login.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/layout/activity_profile.xml" value="0.2" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/layout/fragment_products.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/layout/fragment_settings.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/layout/fragment_settings.xml" value="0.25" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/onlineshopmobile/app/src/main/res/menu/bottom_menu.xml" value="0.20416666666666666" />
       </map>
     </option>

@@ -18,12 +18,12 @@ import java.util.Objects;
 
 public class ProfileFragment extends Fragment {
 
-    private TextView textViewEmail, textViewFName, textViewLName;
+    private TextView textViewEmail, textViewFName, textViewLName, textViewCity, textViewAddress;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
     @Override
@@ -33,9 +33,13 @@ public class ProfileFragment extends Fragment {
         textViewEmail = view.findViewById(R.id.textViewEmail);
         textViewFName = view.findViewById(R.id.textViewFName);
         textViewLName = view.findViewById(R.id.textViewLName);
+        textViewCity = view.findViewById(R.id.textViewCity);
+        textViewAddress = view.findViewById(R.id.textViewAddress);
 
         textViewEmail.setText(SharedPrefManager.getInstance(getActivity()).getUser().getEmail());
         textViewFName.setText(SharedPrefManager.getInstance(getActivity()).getUser().getFName());
         textViewLName.setText(SharedPrefManager.getInstance(getActivity()).getUser().getLName());
+        textViewCity.setText(SharedPrefManager.getInstance(getActivity()).getUser().getCity());
+        textViewAddress.setText(SharedPrefManager.getInstance(getActivity()).getUser().getAddress());
     }
 }

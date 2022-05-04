@@ -1,8 +1,10 @@
 package com.example.online_shop_mobile.api;
 
-import com.example.online_shop_mobile.models.DefaultResponse;
-import com.example.online_shop_mobile.models.LoginResponse;
-import com.example.online_shop_mobile.models.UsersResponse;
+import com.example.online_shop_mobile.models.response.DefaultResponse;
+import com.example.online_shop_mobile.models.response.LoginResponse;
+import com.example.online_shop_mobile.models.response.ProductResponse;
+import com.example.online_shop_mobile.models.User;
+import com.example.online_shop_mobile.models.response.UsersResponse;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -31,16 +33,21 @@ public interface Api {
             @Query("password") String password
     );
 
+    @GET("get-products")
+    Call<ProductResponse> getProducts();
+
     @GET("allusers")
     Call<UsersResponse> getUsers();
 
     @FormUrlEncoded
-    @PUT("updateuser/{id}")
-    Call<LoginResponse> updateUser(
-            @Path("id") int id,
-            @Query("email") String email,
-            @Query("fName") String fName,
-            @Query("lName") String lName
+    @POST("update-profile")
+    Call<User> updateUser(
+            @Field("email") String email,
+            @Field("fName") String fName,
+            @Field("lName") String lName,
+            @Field("city") String city,
+            @Field("address") String address
+
     );
 
     @FormUrlEncoded

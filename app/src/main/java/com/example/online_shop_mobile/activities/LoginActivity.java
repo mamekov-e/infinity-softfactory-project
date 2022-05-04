@@ -1,6 +1,5 @@
 package com.example.online_shop_mobile.activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.online_shop_mobile.R;
 import com.example.online_shop_mobile.api.RetrofitClient;
-import com.example.online_shop_mobile.models.LoginResponse;
+import com.example.online_shop_mobile.models.response.LoginResponse;
 import com.example.online_shop_mobile.storage.SharedPrefManager;
 
 import retrofit2.Call;
@@ -85,7 +84,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 LoginResponse loginResponse = response.body();
-                System.out.println("!!!!!!!!!!!LOGIN RESPONSE!!!!!!!" + loginResponse);
 
                 if (!loginResponse.isError()) {
 

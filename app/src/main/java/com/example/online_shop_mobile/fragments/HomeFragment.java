@@ -27,13 +27,13 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        textViewEmail = view.findViewById(R.id.textViewEmail);
-        textViewFName = view.findViewById(R.id.textViewFName);
-        textViewLName = view.findViewById(R.id.textViewLName);
-
-        textViewEmail.setText(SharedPrefManager.getInstance(getActivity()).getUser().getEmail());
-        textViewFName.setText(SharedPrefManager.getInstance(getActivity()).getUser().getFName());
-        textViewLName.setText(SharedPrefManager.getInstance(getActivity()).getUser().getLName());
+//
+//        textViewEmail = view.findViewById(R.id.textViewEmail);
+//        textViewFName = view.findViewById(R.id.textViewFName);
+//        textViewLName = view.findViewById(R.id.textViewLName);
+//
+//        textViewEmail.setText(SharedPrefManager.getInstance(getActivity()).getUser().getEmail());
+//        textViewFName.setText(SharedPrefManager.getInstance(getActivity()).getUser().getFName());
+//        textViewLName.setText(SharedPrefManager.getInstance(getActivity()).getUser().getLName());
     }
 }
